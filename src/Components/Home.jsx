@@ -8,7 +8,7 @@ const Home = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        navigate(`/productos/${search}`);
+        navigate(`/productos?q=${search}`);
     }
 
 
