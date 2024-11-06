@@ -9,6 +9,7 @@ function AppRoutes () {
             <Route path="/" element={<Home />} />
             <Route path="/productos" element={<Productos />} />
             <Route path='/detalle-producto/:id' element={<DetalleProducto/>} />
+            
         </Routes>
     )
 }

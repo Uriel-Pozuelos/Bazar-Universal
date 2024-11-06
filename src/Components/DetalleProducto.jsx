@@ -12,7 +12,7 @@ const DetalleProducto = () => {
 
         const producto = async () => {
             try {
-                const response = await fetch(`/api/items?q=${id}`);
+                const response = await fetch(`/api/items/${id}`);
                 if (!response.ok) {
                     throw new Error('Error al obtener el producto');
                 }
