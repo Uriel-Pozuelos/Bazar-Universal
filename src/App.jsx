@@ -1,16 +1,16 @@
-
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-// import Calculadora from './Components/Calculadora'
+import AppRoutes from './routes'
+
 
 function App() {
   
 
   return (
     <> 
-      <div className="card">
-        {/* <Calculadora /> */}
-        
-      </div>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </>
   )
 }
