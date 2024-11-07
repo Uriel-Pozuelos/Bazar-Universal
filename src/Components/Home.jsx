@@ -19,7 +19,11 @@ const Home = () => {
             <p className="text-center mb-3 text-2xl lg:text-4xl">Bienvenido a Bazar Universal</p>
 
             <div className="flex justify-center items-center mb-3">
-                <img src="/shopping-bags-65b616.webp" alt="Bazar Universal" className="img-fluid w-[30%] h-[30%] lg:w-[20] lg:w-[30%]" />
+                <img 
+                    src="/shopping-bags-65b616.webp" 
+                    alt="Bazar Universal" 
+                    className="img-fluid w-[30%] h-[30%] lg:w-[20] lg:w-[30%]"
+                    onClick={() => navigate('/compras')} />
             </div>
 
             <div className="flex">
