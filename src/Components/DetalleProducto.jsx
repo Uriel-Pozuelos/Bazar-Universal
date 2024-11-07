@@ -34,8 +34,10 @@ const DetalleProducto = () => {
         try {
 
             let images = producto.images;
+            console.log('antes',images);
             if(typeof images == 'string') {
                 images = JSON.parse(images);
+                console.log('despues',images);
             }
 
             const compra = {
@@ -50,7 +52,9 @@ const DetalleProducto = () => {
                 quantity: 1 
             }; 
 
-            const response = await fetch(`/api/addSale`, {
+            console.log('en compra', compra.images);
+
+            const response = await fetch(`/api/addCompra`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(compra)
@@ -66,8 +70,9 @@ const DetalleProducto = () => {
             }
 
         } catch (error) {
-            console.error("Error:", error);
-            toast.error("Hubo un problema con la compra.");
+            console.error("Detalles del error:", error.message);
+            toast.error("Error de compra: " + error.message);
+
         }
     };
 
