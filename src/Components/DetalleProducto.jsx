@@ -32,9 +32,25 @@ const DetalleProducto = () => {
 
     const handleComprar = async () => {
         try {
-            const compra = { productId: producto.id, quantity: 1 }; 
 
-            const response = await fetch(`/api/compra`, {
+            let images = producto.images;
+            if(typeof images == 'string') {
+                images = JSON.parse(images);
+            }
+
+            const compra = {
+                productId: producto.id, 
+                title: producto.title,
+                price: producto.price,
+                description: producto.description,
+                brand: producto.brand,
+                stock: producto.stock,
+                category: producto.category,
+                images,
+                quantity: 1 
+            }; 
+
+            const response = await fetch(`/api/addSale`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(compra)
@@ -72,7 +88,7 @@ const DetalleProducto = () => {
                 <p><strong>Stock:</strong> {producto.stock}</p>
                 <p><strong>Rating:</strong> {producto.rating}</p>
             </div>
-            <button className="p-3 rounded-r-lg text-md bg-[#1a1a1a]"
+            <button className="p-3 rounded-lg text-md bg-[#1a1a1a]"
                     onClick={handleComprar}>
                 Comprar
             </button>

@@ -44,7 +44,7 @@ const Compras = () => {
                     compras.map((compra, index) => (
                         <li key={index} className="border-b py-2">
                             <p><strong>ID de Producto:</strong> {compra.productId}</p>
-                            <p><strong>Nombre:</strong>{compra.nombre}</p>
+                            <p><strong>Nombre:</strong>{compra.title}</p>
                             <p><strong>Cantidad:</strong> {compra.quantity}</p>
                             <p><strong>Fecha:</strong> {new Date(compra.date).toLocaleString()}</p>
                         </li>
