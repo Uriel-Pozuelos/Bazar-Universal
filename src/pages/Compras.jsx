@@ -43,7 +43,7 @@ const Compras = () => {
             <ul className="border border-300 p-3 text-left text-xl w-full rounded-lg">
                 {compras.length > 0 ? (
                     compras.map((compra, index) => (
-                        <li key={index} className="overflow-hidden p-4 flex flex-col gap-4 h-full items-center">
+                        <li key={index} className="overflow-hidden p-4 flex flex-row sm:flex-col gap-4 h-full items-center">
                             
                             <img className="rounded-lg h-auto object-cover w-full h-full sm:w-1/3 sm:rounded-full" src={compra.thumbnail} alt={compra.title} />
                             <div className="flex-1 p-3 text-balance text-lg lg:text-xl lg:space-y-5 space-y-2 text-left h-full">
