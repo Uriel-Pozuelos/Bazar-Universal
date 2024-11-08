@@ -22,7 +22,7 @@ const Card = ({ producto, isDetalle = false, handleComprar}) => {
                 <p><strong>Categoría:</strong> {producto.category}</p>
                 <p>
                     <strong>Puntuación:</strong> {producto.rating}
-                    <span className="text-yellow-500 lg:ml-3">
+                    <span className="text-yellow-500 ml-3">
                         {Array.from({ length: Math.floor(producto.rating) }).map((_, index) => (
                             <i key={index} className="fas fa-star"></i>
                         ))}
