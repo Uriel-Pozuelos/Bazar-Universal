@@ -34,8 +34,8 @@ const Compras = () => {
 
     }, []);
 
-    if (loading) return <h1>Cargando compras...</h1>;
-    if (error) return <h1>Error al cargar las compras</h1>;
+    if (loading) return <h1 className="text-4xl">Cargando compras...</h1>;
+    if (error) return <h1 className="text-4xl">Error al cargar las compras</h1>;
 
     return (
         <div>

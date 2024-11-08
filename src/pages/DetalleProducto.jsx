@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Card from "../Components/Card";
+import Search from "../Components/Search";
 
 const DetalleProducto = () => {
     
@@ -77,11 +78,20 @@ const DetalleProducto = () => {
         }
     };
 
-    if (loading) return <h1>Cargando...</h1>;
-    if (error) return <h1>Error al obtener el producto</h1>;
+    if (loading) return <h1 className="text-4xl">Cargando productos...</h1>;
+    if (error) return <h1 className="text-4xl">Error al obtener el producto</h1>;
 
     return (
         <>
+            <div className='flex items-center top-0 space-x-3 w-full'>
+                <img 
+                    src="/shopping-bags-65b616.webp" 
+                    alt="Bazar Universal" 
+                    className="img-fluid w-[10%] h-[10%] lg:w-12 cursor-pointer"
+                    onClick={() => Navigate('/compras')} 
+                />
+                <Search />
+            </div>
             <ToastContainer />
             <Card producto={producto} isDetalle={true} handleComprar={handleComprar}  />
             
