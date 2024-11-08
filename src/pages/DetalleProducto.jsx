@@ -35,12 +35,11 @@ const DetalleProducto = () => {
     const handleComprar = async () => {
         try {
 
-            let images = producto.images;
-            let thumbnail = images[0].url;
+            let images = producto.images[0];
+            
 
             console.log("Producto:", producto);
             console.log("Imagenes:", images);
-            console.log("Thumbnail:", thumbnail);
             
             const compra = {
                 productId: producto.id, 
@@ -51,7 +50,7 @@ const DetalleProducto = () => {
                 stock: producto.stock,
                 category: producto.category,
                 images,
-                thumbnail,
+                thumbnail: producto.thumbnail,
                 quantity: 1 
             }; 
             
