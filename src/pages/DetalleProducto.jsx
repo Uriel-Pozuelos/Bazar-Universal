@@ -83,12 +83,8 @@ const DetalleProducto = () => {
     return (
         <>
             <ToastContainer />
-            <Card producto={producto} isDetalle={true} />
+            <Card producto={producto} isDetalle={true} handleComprar={handleComprar}  />
             
-            <button className="p-3 rounded-lg text-md bg-[#1a1a1a]"
-                    onClick={handleComprar}>
-                Comprar
-            </button>
         </>
     );
 }

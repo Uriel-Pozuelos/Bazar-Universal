@@ -38,12 +38,13 @@ function Productos() {
     return (
         <>
             <h1 className='text-center text-2xl font-bold mb-4'>Lista de Productos</h1>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
                 {productos.map((producto) => (
 
                     <Link key={producto.id}
-                        className='border border-gray-300 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+                        className='p-4 rounded-lg shadow-md hover:shadow-lg hover:text-white transition-shadow duration-300'
                         to={`/detalle-producto/${producto.id}`}>
 
                         <Card producto={producto} />   
