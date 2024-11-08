@@ -38,13 +38,13 @@ const Compras = () => {
     if (error) return <h1 className="text-4xl">Error al cargar las compras</h1>;
 
     return (
-        <div>
+        <div className="w-full">
             <h1 className="text-6xl mb-3">Compras</h1>
-            <ul>
+            <ul className="border border-300 p-3 text-left text-xl w-full rounded-lg">
                 {compras.length > 0 ? (
                     compras.map((compra, index) => (
-                        <li key={index} className="border-b py-2">
-                            {/* <p><strong>ID de Producto:</strong> {compra.productId}</p> */}
+                        <li key={index} className="border-b py-4">
+                            
                             <img src={compra.thumbnail} alt={compra.title} />
                             <p><strong>Nombre:</strong> {compra.title}</p>
                             <p><strong>Cantidad:</strong> {compra.quantity}</p>
@@ -57,7 +57,7 @@ const Compras = () => {
             </ul>
 
             <Link to={'/'} className="">
-                <button className="p-3 text-white rounded-lg text-md bg-[#1a1a1a]">Salir</button>
+                <button className="p-3 text-black rounded-lg text-md bg-yellow-400 mt-4 w-full">Salir</button>
             </Link>
         </div>
     );

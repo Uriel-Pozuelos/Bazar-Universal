@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Card from "../Components/Card";
@@ -36,12 +36,12 @@ const DetalleProducto = () => {
         try {
 
             let images = producto.images;
-            console.log('antes',images);
-            if(typeof images == 'string') {
-                images = JSON.parse(images);
-                console.log('despues',images);
-            }
+            let thumbnail = images[0].url;
 
+            console.log("Producto:", producto);
+            console.log("Imagenes:", images);
+            console.log("Thumbnail:", thumbnail);
+            
             const compra = {
                 productId: producto.id, 
                 title: producto.title,
@@ -51,10 +51,10 @@ const DetalleProducto = () => {
                 stock: producto.stock,
                 category: producto.category,
                 images,
+                thumbnail,
                 quantity: 1 
             }; 
-
-            console.log('en compra', compra.images);
+            
 
             const response = await fetch(`/api/addCompra`, {
                 method: 'POST',
@@ -83,12 +83,12 @@ const DetalleProducto = () => {
 
     return (
         <>
-            <div className='flex items-center top-0 space-x-3 w-full'>
+            <div className='flex items-center space-x-3 w-full mb-5'>
                 <img 
                     src="/shopping-bags-65b616.webp" 
                     alt="Bazar Universal" 
                     className="img-fluid w-[10%] h-[10%] lg:w-12 cursor-pointer"
-                    onClick={() => Navigate('/compras')} 
+                    onClick={() => navigate('/compras')} 
                 />
                 <Search />
             </div>

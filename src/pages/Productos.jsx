@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Navigate, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Card from '../Components/Card';
 import Search from '../Components/Search';
 
@@ -7,6 +7,7 @@ function Productos() {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     
     const location = useLocation();
@@ -38,12 +39,12 @@ function Productos() {
 
     return (
         <>
-            <div className='flex items-center top-0 space-x-3 w-full'>
+            <div className='flex items-center space-x-3 w-full mb-5'>
                 <img 
                     src="/shopping-bags-65b616.webp" 
                     alt="Bazar Universal" 
                     className="img-fluid w-[10%] h-[10%] lg:w-12 cursor-pointer"
-                    onClick={() => Navigate('/compras')} 
+                    onClick={() => navigate('/compras')} 
                 />
                 <Search />
             </div>

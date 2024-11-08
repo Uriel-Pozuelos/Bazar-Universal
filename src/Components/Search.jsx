@@ -19,7 +19,7 @@ const Search = () => {
     };
 
     return (
-        <form className="flex flex-col items-center" onSubmit={handleSearch}>
+        <form className="flex flex-col items-center w-full" onSubmit={handleSearch}>
             <div className="flex w-full">
                 <input 
                     type="text" 
