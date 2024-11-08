@@ -13,8 +13,8 @@ export default defineConfig({
         injectRegister: 'auto',
         includeAssets: ['/android', '/ios', '/windows11'],
         manifest: {
-          name: 'React-vite-app-pwa',
-          short_name: 'React pwa',
+          name: 'Universal Bazar',
+          short_name: 'Universal Bazar',
           description: 'My Awesome App description',
           theme_color: '#ffffff',
           icons: [

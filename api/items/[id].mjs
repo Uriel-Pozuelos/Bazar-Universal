@@ -12,8 +12,8 @@ export async function GET(request) {
             throw new Error('Error al obtener productos de la base de datos');
         }
 
-        let products = await response.json();
-        products = products.products;
+        let data = await response.json();
+        const products = data;
 
 
         // Buscar el producto por ID

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Card from "../Components/Card";
 
 const DetalleProducto = () => {
     
@@ -82,17 +83,8 @@ const DetalleProducto = () => {
     return (
         <>
             <ToastContainer />
-            <div>
-                <h1>{producto.title}</h1>
-                <img src={producto.thumbnail} alt={producto.title} style={{ width: '100%', height: 'auto' }} />
-                <p><strong>Marca:</strong> {producto.brand}</p>
-                <p><strong>Categoría:</strong> {producto.category}</p>
-                <p><strong>Precio:</strong> ${producto.price}</p>
-                <p><strong>Descuento:</strong> {producto.discountPercentage}%</p>
-                <p><strong>Descripción:</strong> {producto.description}</p>
-                <p><strong>Stock:</strong> {producto.stock}</p>
-                <p><strong>Rating:</strong> {producto.rating}</p>
-            </div>
+            <Card producto={producto} isDetalle={true} />
+            
             <button className="p-3 rounded-lg text-md bg-[#1a1a1a]"
                     onClick={handleComprar}>
                 Comprar

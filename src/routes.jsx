@@ -1,8 +1,8 @@
 import {Routes, Route} from 'react-router-dom';
-import Productos from './Components/Productos';
-import Home from './Components/Home';
-import DetalleProducto from './Components/DetalleProducto';
-import Compras from './Components/Compras';
+import Productos from './pages/Productos';
+import Home from './pages/Home';
+import DetalleProducto from './pages/DetalleProducto';
+import Compras from './pages/Compras';
 
 function AppRoutes () {
     return (

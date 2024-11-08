@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Compras = () => {
 
@@ -38,13 +39,14 @@ const Compras = () => {
 
     return (
         <div>
-            <h1>Compras</h1>
+            <h1 className="text-6xl mb-3">Compras</h1>
             <ul>
                 {compras.length > 0 ? (
                     compras.map((compra, index) => (
                         <li key={index} className="border-b py-2">
-                            <p><strong>ID de Producto:</strong> {compra.productId}</p>
-                            <p><strong>Nombre:</strong>{compra.title}</p>
+                            {/* <p><strong>ID de Producto:</strong> {compra.productId}</p> */}
+                            <img src={compra.thumbnail} alt={compra.title} />
+                            <p><strong>Nombre:</strong> {compra.title}</p>
                             <p><strong>Cantidad:</strong> {compra.quantity}</p>
                             <p><strong>Fecha:</strong> {new Date(compra.date).toLocaleString()}</p>
                         </li>
@@ -53,6 +55,10 @@ const Compras = () => {
                     <p>No se encontraron compras.</p>
                 )}
             </ul>
+
+            <Link to={'/'} className="">
+                <button className="p-3 text-white rounded-lg text-md bg-[#1a1a1a]">Salir</button>
+            </Link>
         </div>
     );
 }
